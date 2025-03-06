@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Welcome to <%= title %></h1>
+    <p>This is a simple app built with Node.js and EJS!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam beatae voluptatibus, tempora sint, exercitationem quam deleniti rerum labore blanditiis unde. Maiores qui voluptatibus saepe possimus autem aperiam harum perferendis incidunt laudantium voluptate similique ipsam rem explicabo aliquid nesciunt, odio error iste necessitatibus in optio fugit. Vel rerum quas possimus harum obcaecati laudantium, optio, nisi est eaque asperiores itaque molestias recusandae perspiciatis, illo odit atque. Natus quos, necessitatibus dicta aliquid quasi explicabo voluptas quidem inventore aut id, fugiat, corporis recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam beatae voluptatibus, tempora sint, exercitationem quam deleniti rerum labore blanditiis unde. Maiores qui voluptatibus saepe possimus autem aperiam harum perferendis incidunt laudantium voluptate similique ipsam rem explicabo aliquid nesciunt, odio error iste necessitatibus in optio fugit. Vel rerum quas possimus harum obcaecati laudantium, optio, nisi est eaque asperiores itaque molestias recusandae perspiciatis, illo odit atque. Natus quos, necessitatibus dicta aliquid quasi explicabo voluptas quidem inventore aut id, fugiat, corporis recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquam beatae voluptatibus, tempora sint, exercitationem quam deleniti rerum labore blanditiis unde. Maiores qui voluptatibus saepe possimus autem aperiam harum perferendis incidunt laudantium voluptate similique ipsam rem explicabo aliquid nesciunt, odio error iste necessitatibus in optio fugit. Vel rerum quas possimus harum obcaecati laudantium, optio, nisi est eaque asperiores itaque molestias recusandae perspiciatis, illo odit atque. Natus quos, necessitatibus dicta aliquid quasi explicabo voluptas quidem inventore aut id, fugiat, corporis recusandae?</p>
+    <button class="btn1">Click to change color of the title</button>
+    <button class="btn2">Click to change color of the paragraph</button>
+    <button class="btn3">Click to change color of the body</button>
+
+    <script>
+        const btn1 = document.querySelector('.btn1');
+        let colorIndex1 = 0;
+        btn1.addEventListener('click', () => {
+            const h1 = document.querySelector('h1');
+            const colors = ["red", "blue", "yellow", "pink", "orange"];
+            h1.style.color = colors[colorIndex1];
+            colorIndex1 = (colorIndex1 + 1) % colors.length;
+        });
+        const btn2 = document.querySelector('.btn2');
+        let colorIndex2 = 0;
+        btn2.addEventListener('click', () => {
+            const paras = document.querySelectorAll('p');
+            const colors = ["green", "purple", "brown", "cyan", "magenta"];
+            paras.forEach( para => {
+                para.style.color = colors[colorIndex2];
+            })
+            colorIndex2 = (colorIndex2 + 1) % colors.length;
+        });
+
+        const btn3 = document.querySelector('.btn3');
+        let colorIndex3 = 0;
+        btn3.addEventListener('click', () => {
+            const colors = ["teal", "navy", "lime", "maroon", "olive"];
+            document.body.style.backgroundColor = colors[colorIndex3];
+            colorIndex3 = (colorIndex3 + 1) % colors.length;
+        });
+    </script>
+</body>
+</html>
